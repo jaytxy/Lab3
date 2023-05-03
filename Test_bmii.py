@@ -1,8 +1,18 @@
-import unittest
+import ET0735_Lab2.bmi as bmi
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+print("Test_bmi")
+def test_bmi_normal_weight():
+    result = bmi.calculate_bmi(weight=57, height=1.73)
+    assert (result == 0)
 
-if __name__ == '__main__':
-    unittest.main()
+def test_bmi_over_weight():
+    result = bmi.calculate_bmi(weight=300, height=1.73)
+    assert (result == 1)
+
+def test_bmi_under_weight():
+    result = bmi.calculate_bmi(weight=2, height=1.73)
+    assert (result == -1)
+
+
+
+
