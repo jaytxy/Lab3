@@ -8,6 +8,11 @@ employee_data = [
     {"name": "Peter", "age": 40, "department": "Sales", "salary": 60000}
 ]
 
+def main():
+    while (True):
+        display_main_menu()
+
+
 def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     result = []
 
@@ -21,10 +26,11 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
 def calculate_average_salary():
     total = 0
     average = 0
-
-    #add your implementation to calculate here
-
-
+    i = 0
+    for item in employee_data:
+        total += employee_data[i]["age"]
+        i += 1
+    average = total / i
     return average
 
 def get_employees_by_dept(department):
@@ -84,10 +90,7 @@ def display_main_menu():
     elif option == 'Q':
         quit()
 
-def main():
 
-    while (True):
-        display_main_menu()
 
 
 if __name__ == "__main__":
